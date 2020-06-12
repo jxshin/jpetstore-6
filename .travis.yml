@@ -11,14 +11,6 @@ cache:
 
 install: true
 
-script:
-  - ./mvnw -U clean verify -P ${TARGET_AP_SERVER}
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
-
-after_success:
-  - chmod -R 777 ./travis/after_success.sh
-  - "./travis/after_success.sh"
-
 env:
   global:
   - secure: OYpjRGu1vnh+yrWqdpaF1nWAzshvlFzh9frQGZv51PCrB+xnwY6SLiwtrlNZ9NKp60Buoxf3YySAml2xG86Y0gUCVjUsFlWg0mBFs1Hvnv6lxUVla6ZjiQ+C9wSavjky6jPbGrBjHd2uXvdUnElMzJc7j6Czm6BigmAaivPfwE0=
@@ -30,7 +22,8 @@ addons:
     token:
       secure: "4kOhGCDOhXOk8Ywg/o6eKWw3hgRU9iosCYOOIlj5mxcdmiRqyC0nATpcycKIAqOHCOvuBjERNYtkHDqTM1WjxB4aLlNeBCz3M/k8JSCPi+/6+0+xtwMIZfK2D7HoLML+siXEc1gZimf+ppETv5vjvHEYWgsAgfLVkXIkKpoCAzD796b0lv38HSvSn4Mfbg9T5zH5lQxZ8AHsBdG3PjoaKZJFUMSn4SFCXsORmajqyYyTHZPMez/O4L5q6FtkwNWDb4N8ogRgqprGf7hfPsfTjnKEjBVUj2+m2h5VfYAI2fRaXq8bYW46dGx1D8Ufo06WX6jBUJxD73Ff6F2xPf3TpeUd0tSGyBuapaB+m1RBWR22vilDDHelNTWF1PS7RMJgRmV2F50HZ54jWpdL9cB9/YxX7KNLey1UYq/1HEDb5cxGXM/AD9ZrNXeWSE+bQtbPzXisBwJGUtN1Tqk2fOYwOu/ZLDyD01mOaK2bfs63kdeWtogDtJ1+GW6YI5P/buUL+eGgmFhgd1w2OBc5YSHKoEVuZW1+bLLi6ekL70hDRdXJn09gaddaD17Ry8/ieJV9e9ryJmOmngusG4NNh5syhHj0OEWVroRbMpqPkP2JyX4eL7wonl7n1yG7HJJAjv6MYQkJXtd762697ePWHw/ebmk8fSy4/iwrDWESJNgYUrQ=" # encrypted value of your token
 
-
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
   
 
 
